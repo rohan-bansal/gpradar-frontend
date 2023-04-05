@@ -11,6 +11,7 @@ public class GamePieceManager {
     private SpriteBatch batch;
 
     private ArrayList<GamePiece> gamePieces;
+    private ArrayList<GamePiece> gamePieceQueue;
 
     public static GamePieceManager getInstance() {
         if(gamePieceManager == null) {
@@ -22,15 +23,22 @@ public class GamePieceManager {
     public void initSystem() {
         batch = new SpriteBatch();
         gamePieces = new ArrayList<>();
+        gamePieceQueue = new ArrayList<>();
+    }
+
+    public void addGamePiece(GamePiece.Type type, float angleX, float distance) {
+        GamePiece gp = new GamePiece(type);
+        gp.setPosition(angleX, distance);
+
+        gamePieceQueue.add(gp);
     }
 
     public void update() {
         gamePieces.clear();
 
-        GamePiece gp = new GamePiece(GamePiece.Type.CUBE);
-        gp.setPosition(-40, 300);
+        gamePieces.addAll(gamePieceQueue);
 
-        gamePieces.add(gp);
+        gamePieceQueue.clear();
     }
 
     public void render() {

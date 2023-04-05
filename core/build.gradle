@@ -3,4 +3,12 @@ eclipse.project.name = appName + '-core'
 
 dependencies {
   api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  api "edu.wpi.first.ntcore:ntcore-java:2022.3.1"
+  api "edu.wpi.first.wpiutil:wpiutil-java:2022.3.1"
+  api "edu.wpi.first.ntcore:ntcore-jni:2022.3.1:windowsx86"
+  api "edu.wpi.first.ntcore:ntcore-jni:2022.3.1:windowsx86-64"
+  api "edu.wpi.first.ntcore:ntcore-jni:2022.3.1:linuxx86-64"
+  api "edu.wpi.first.ntcore:ntcore-jni:2022.3.1:linuxraspbian"
+  api "edu.wpi.first.ntcore:ntcore-jni:2022.3.1:osxx86-64"
+  api "org.json:json:20090211"
 }
